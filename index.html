@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Výcvik psů hravě | Klášterec nad Ohří</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Outfit:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css?v=1.1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container container--nav">
+            <a href="#" class="logo">
+                <img src="Obrazky/Logo Vycvik psu hrave_1.png" alt="Výcvik psů hravě">
+            </a>
+
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li><a href="#uvod" class="nav__link">Úvod</a></li>
+                    <li><a href="#co-resime" class="nav__link">Co řešíme</a></li>
+                    <li><a href="#muj-pristup" class="nav__link">Můj přístup</a></li>
+                    <li><a href="#reference" class="nav__link">Reference</a></li>
+                    <li><a href="#kontakt" class="nav__link">Kontakt</a></li>
+                    <li><a href="https://www.facebook.com/vycvikpsuhrave/" target="_blank"
+                            class="nav__link nav__link--icon" title="Následujte nás na Facebooku"><i
+                                class="bi bi-facebook"></i></a></li>
+                    <li><a href="https://vycvikpsuhrave.dogres.cz/trainings" target="_blank"
+                            class="btn btn--primary btn--nav">Rezervace lekce</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero: Tmavě zelená + Bílý kruh -->
+        <section id="uvod" class="hero">
+            <div class="hero__circle-bg" data-aos="fade-left"></div>
+
+            <div class="container" style="display: flex; align-items: center; flex-wrap: wrap;">
+                <div class="hero__content">
+                    <h1 class="text-white">Výcvik <span class="text-yellow">psů hravě</span></h1>
+                    <h2 class="text-white" style="font-size: 2.5rem; margin-top: 1rem;">v Klášterci nad Ohří</h2>
+
+                    <ul class="hero__list text-white" style="list-style: none; margin: 3rem 0;">
+                        <li style="font-size: 1.4rem; margin-bottom: 1rem;"><i
+                                class="bi bi-patch-check-fill text-yellow"></i> Nerozumíte si se svým pejskem?</li>
+                        <li style="font-size: 1.4rem; margin-bottom: 1rem;"><i
+                                class="bi bi-patch-check-fill text-yellow"></i> Chcete mu dopřát víc zábavy?</li>
+                        <li style="font-size: 1.4rem; margin-bottom: 1rem;"><i
+                                class="bi bi-patch-check-fill text-yellow"></i> Rádi byste si vylepšili váš vztah?</li>
+                    </ul>
+
+                    <p class="text-white"
+                        style="font-size: 1.3rem; opacity: 0.9; margin-bottom: 3rem; max-width: 500px;">
+                        Cvičíme pozitivně, krok po kroku a tak, aby to bavilo vás oba.
+                    </p>
+
+                    <div class="hero__actions">
+                        <a href="#rezervace" class="btn btn--primary">Chci začít cvičit</a>
+                        <a href="#veterina" class="btn btn--secondary">Kurz manipulace</a>
+                    </div>
+                </div>
+
+                <div class="hero__image-container">
+                    <div class="hero__logo-badge">
+                        <img src="Obrazky/Logo Vycvik psu hrave_1.png" alt="Logo">
+                    </div>
+                    <img src="Obrazky/fotka do Hero.png" alt="Psi" class="hero__dogs">
+                </div>
+            </div>
+        </section>
+
+        <!-- Intro Section: Hravá asymetrie -->
+        <section class="section" id="co-resime">
+            <div class="playful-blob blob--1"></div>
+
+            <div class="container">
+                <div class="grid-hravy">
+                    <div class="col-6">
+                        <span class="label">Náš příběh</span>
+                        <h2 style="color: var(--clr-secondary); margin-bottom: 2rem;">Možná to znáte…</h2>
+                        <p style="font-size: 1.2rem; line-height: 1.8;">Pořídíte si štěně, těšíte se, jak vám to spolu
+                            půjde. Věnujete se mu, snažíte se, učíte povely… Ze začátku to funguje – a pak najednou
+                            začne něco skřípat.</p>
+                        <p>Štěně venku nevnímá, nereaguje. A když přijde puberta, pes jako by „zapomněl“, co uměl.
+                            Najednou je to jiné, než jste si představovali.</p>
+
+                        <div class="grid-item grid-item--yellow" style="margin-top: 3rem; transform: rotate(-1deg);">
+                            <h3 style="margin-bottom: 1.5rem;">Nejčastěji řešíme:</h3>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                <ul style="list-style: none;">
+                                    <li style="margin-bottom: 0.5rem;">🐾 tahání na vodítku</li>
+                                    <li style="margin-bottom: 0.5rem;">🐾 přivolání a soustředění</li>
+                                </ul>
+                                <ul style="list-style: none;">
+                                    <li style="margin-bottom: 0.5rem;">🐾 socializaci</li>
+                                    <li style="margin-bottom: 0.5rem;">🐾 výcvik štěňat</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="overlap-container" style="padding: 0;">
+                            <img src="Obrazky/20250611_111456.jpg" alt="Výcvik" class="img-main"
+                                style="width: 100%; border-radius: 60px 20px 60px 20px;">
+                            <div
+                                style="position: absolute; bottom: -30px; left: -30px; background: var(--clr-primary); padding: 2rem; border-radius: 30px; box-shadow: 10px 10px 30px rgba(0,0,0,0.1); z-index: 5; max-width: 300px;">
+                                <p style="margin: 0; font-weight: 700; color: var(--clr-text-dark); line-height: 1.4;">
+                                    "Každý pes je jiný, proto vždy hledáme cestu pro vás."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Služby: Barevné hravé bloky + Detaily -->
+        <section class="section section--mint" style="border-radius: 0 150px 0 150px;">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: 5rem;">
+                    <span class="label">Služby</span>
+                    <h2 style="margin: 0;">Kde a jak <span class="text-white">společně trénujeme</span></h2>
+                </div>
+
+                <div class="grid-hravy">
+                    <!-- Služba 1: Terén -->
+                    <div class="col-6">
+                        <div class="img-hravy" style="height: 400px; margin-bottom: 2rem;">
+                            <img src="Obrazky/socializační procházky 2.jpg" alt="Výcvik v terénu"
+                                style="height: 100%; object-fit: cover;">
+                        </div>
+                    </div>
+                    <div class="col-6" style="padding-left: 2rem;">
+                        <span class="label" style="background: var(--clr-secondary); color: white;">V reálném
+                            prostředí</span>
+                        <h3>Výcvik, který funguje i venku</h3>
+                        <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">
+                            Výcvik není jen o tom, co pes zvládne v klidu na cvičáku. Důležité je, aby fungoval tam, kde
+                            se skutečně pohybujete – mezi lidmi, auty a ostatními psy.
+                        </p>
+                        <p style="font-size: 1.1rem; opacity: 0.9;">
+                            Proto cvičíme přímo v ulicích a parcích Klášterce nad Ohří. Pes se učí zvládat běžné podněty
+                            v klidu a vy získáte jistotu, jak reagovat v náročnějších chvílích.
+                        </p>
+                    </div>
+
+                    <!-- Služba 3: Socializace (prohozené strany pro dynamiku) -->
+                    <div class="col-6" style="padding-right: 2rem; order: 2;">
+                        <span class="label" style="background: var(--clr-secondary); color: white;">Sociální
+                            dovednosti</span>
+                        <h3>Emoce a klid v přítomnosti psů</h3>
+                        <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">
+                            Mnoho psů venku na ostatní štěká nebo táhne, protože jsou nejistí nebo přehnaně aktivní. My
+                            se zaměřujeme na to, jak se v přítomnosti jiných psů cítit v bezpečí.
+                        </p>
+                        <p style="font-size: 1.1rem; opacity: 0.9;">
+                            Na socializačních procházkách neučíme jen povely, ale budujeme schopnost psa zůstat v klidu.
+                            Cílem je, aby ostatní psi přestali být „středem vesmíru“ a váš vztah byl na prvním místě.
+                        </p>
+                    </div>
+                    <div class="col-6" style="order: 1;">
+                        <div class="img-hravy" style="height: 400px; margin-bottom: 2rem;">
+                            <img src="Obrazky/socializační procházky 1.jpg" alt="Socializace"
+                                style="height: 100%; object-fit: cover;">
+                        </div>
+                    </div>
+
+                    <!-- Služba 2: Cvičák -->
+                    <div class="col-12" style="margin-top: 4rem;">
+                        <div class="grid-item grid-item--white"
+                            style="display: flex; align-items: center; gap: 4rem; flex-wrap: wrap; border-top: 8px solid var(--clr-primary);">
+                            <div style="flex: 1; min-width: 300px;">
+                                <span class="label">Areál ZKO Klášterec</span>
+                                <h3>Zázemí pro hloubkovou práci</h3>
+                                <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+                                    Jsem hrdým členem <strong>ZKO Klášterec nad Ohří</strong>, kde projekt Výcvik psů
+                                    hravě probíhá v profesionálním zázemí. Můžeme si domluvit individuální lekci nebo
+                                    můžete dorazit na skupinovou hodinu.
+                                </p>
+                                <div style="display: flex; gap: 1.5rem;">
+                                    <div
+                                        style="background: var(--clr-mint); padding: 1.5rem; border-radius: 15px; flex: 1;">
+                                        <h4
+                                            style="font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--clr-text-dark);">
+                                            <i class="bi bi-patch-check-fill text-yellow"></i> Individuální lekce
+                                        </h4>
+                                        <p style="font-size: 0.95rem; margin: 0;">Maximální soustředění jen na vás a
+                                            vašeho psa.</p>
+                                    </div>
+                                    <div
+                                        style="background: var(--clr-mint); padding: 1.5rem; border-radius: 15px; flex: 1;">
+                                        <h4
+                                            style="font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--clr-text-dark);">
+                                            <i class="bi bi-people-fill text-yellow"></i> Skupinové hodiny
+                                        </h4>
+                                        <p style="font-size: 0.95rem; margin: 0;">Trénink spolupráce a socializace v
+                                            kontrolovaném kolektivu.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="width: 400px; max-width: 100%;">
+                                <img src="Obrazky/20260103_101846.jpg" alt="Areál cvičiště"
+                                    style="width: 100%; border-radius: 30px; box-shadow: 10px 10px 30px rgba(0,0,0,0.1);">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Veterinární manipulace: Dominantní tmavý blok -->
+        <section class="section section--dark" id="veterina" style="padding: 10rem 0;">
+            <div class="playful-blob blob--2" style="opacity: 0.1;"></div>
+
+            <div class="container">
+                <div class="grid-hravy">
+                    <div class="col-5">
+                        <div class="overlap-container">
+                            <img src="Obrazky/vet manipulace 1.jpg" alt="Veterina" class="img-main">
+                            <img src="Obrazky/vet manipulace 5.jpg" alt="Detail" class="img-sub"
+                                style="width: 250px; bottom: -20px; right: -20px;">
+                            <div
+                                style="position: absolute; top: 0; left: 0; width: 100px; height: 100px; background: var(--clr-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; transform: translate(-30%, -30%); z-index: 5;">
+                                <i class="bi bi-heart-pulse-fill text-white" style="font-size: 2.5rem;"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-7" style="padding-left: 3rem;">
+                        <span class="label" style="margin-bottom: 3rem;">Specializovaný kurz</span>
+                        <h2 class="text-white"
+                            style="margin-bottom: 2rem; border-bottom: 2px solid var(--clr-primary); display: inline-block;">
+                            Veterinární manipulace</h2>
+                        <p class="text-white" style="font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.9;">Nabízíme
+                            citlivý a postupný trénink přímo ve <strong>Veterinární ordinaci MVDr. Kučera</strong>.</p>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 4rem;">
+                            <div
+                                style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 20px; border-left: 4px solid var(--clr-primary);">
+                                <h4 class="text-yellow" style="margin-bottom: 1rem;">Co pejska naučíme</h4>
+                                <ul style="list-style: none; font-size: 1rem; color: rgba(255,255,255,0.8);">
+                                    <li style="margin-bottom: 0.5rem;">🐾 Doteky kdekoli na těle</li>
+                                    <li style="margin-bottom: 0.5rem;">🐾 Prohlídka uší a tlapek</li>
+                                    <li style="margin-bottom: 0.5rem;">🐾 Klid při držení</li>
+                                </ul>
+                            </div>
+                            <div
+                                style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 20px; border-left: 4px solid var(--clr-mint);">
+                                <h4 class="text-yellow" style="margin-bottom: 1rem;">Proč do toho jít</h4>
+                                <p style="font-size: 0.95rem; color: rgba(255,255,255,0.8);">Místo síly volíme
+                                    spolupráci. Návštěva veteriny může být klidná pro oba.</p>
+                            </div>
+                        </div>
+                        <a href="https://vycvikpsuhrave.dogres.cz/trainings" class="btn btn--primary">Rezervovat volný
+                            termín</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Přístup: Fotky + Text Redesigned -->
+        <section class="section" id="muj-pristup">
+            <div class="playful-blob blob--1" style="bottom: 0; top: auto; left: auto; right: -100px; opacity: 0.1;">
+            </div>
+
+            <div class="container">
+                <div class="grid-hravy">
+                    <div class="col-6">
+                        <span class="label">Můj přístup</span>
+                        <h2 style="margin-bottom: 2rem;">Výcvik založený na <span
+                                style="color: var(--clr-secondary);">vzájemném porozumění</span></h2>
+                        <p style="font-size: 1.25rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                            Pracuji pomocí pozitivní motivace a klikru. Podporuji u psa samostatné přemýšlení a chuť
+                            spolupracovat. Pes nemusí poslouchat ze strachu, může spolupracovat, protože mu to dává
+                            smysl.
+                        </p>
+                        <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 2.5rem; opacity: 0.9;">
+                            Dlouhou dobu jsem se věnovala <strong>agility a obedience</strong>. Postupně mě ale začalo
+                            víc zajímat to nejdůležitější: vztah mezi člověkem a psem v běžném životě. Věřím, že každý
+                            pes má své potřeby, které je třeba v tréninku respektovat.
+                        </p>
+
+                        <div class="grid-item grid-item--white"
+                            style="border-left: 6px solid var(--clr-primary); padding: 2.5rem; transform: rotate(-1deg);">
+                            <p
+                                style="font-weight: 600; font-size: 1.15rem; color: var(--clr-text-dark); margin: 0; line-height: 1.5;">
+                                "Moderní etický výcvik respektuje potřeby psa, buduje důvěru a vytváří pevné pouto."
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="approach-visual">
+                            <div class="approach-circle"></div>
+                            <img src="Obrazky/freepik__background__91116(2).png" alt="Pouto se psem"
+                                class="approach-img">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-hravy" style="margin-top: 6rem;">
+                    <div class="col-6">
+                        <div class="grid-item grid-item--white"
+                            style="border: 4px solid var(--clr-mint); height: 100%;">
+                            <h3 style="color: var(--clr-secondary);"><i class="bi bi-heart-fill"></i> Pro koho výcvik je
+                            </h3>
+                            <p>Pro lidi, kteří chtějí se psem aktivně trávit čas, budovat vztah a vnímat jeho potřeby.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="grid-item grid-item--white" style="border: 4px solid #fecaca; height: 100%;">
+                            <h3 style="color: #e11d48;"><i class="bi bi-x-circle-fill"></i> Pro koho není</h3>
+                            <p>Pokud hledáte dril, autoritativní přístup nebo řešení založená na trestech a strachu.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reference: Facebook Reviews -->
+        <section class="section section--mint" id="reference">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: 5rem;">
+                    <span class="label">Reference</span>
+                    <h2 style="margin: 0;">Co o nás píšou na <span style="color: #1877F2;">Facebooku</span></h2>
+                </div>
+
+                <div class="grid-hravy">
+                    <div class="col-4">
+                        <div class="fb-review-card">
+                            <div class="fb-user">
+                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%232D8A84' d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z'/%3E%3C/svg%3E"
+                                    alt="Uživatel">
+                                <div class="fb-user-info">
+                                    <h4>Jana M.</h4>
+                                    <div class="fb-stars">
+                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                            class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                            class="bi bi-star-fill"></i>
+                                    </div>
+                                </div>
+                                <i class="bi bi-facebook fb-logo-small"></i>
+                            </div>
+                            <p class="fb-review-text">Velice děkuji za perfektní poradenství. Tohle je skutečná psí
+                                psychologie. Už od prvního setkání se cosi začalo měnit a od třetího je pejsek jako
+                                vyměněný. Myslím, že je rád, že konečně proudí komunikace oběma směry. Nejsem
+                                začátečník, a přesto jsme dělali spoustu chyb plynoucích z nepochopení.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <div class="fb-review-card">
+                            <div class="fb-user">
+                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%232D8A84' d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z'/%3E%3C/svg%3E"
+                                    alt="Uživatel">
+                                <div class="fb-user-info">
+                                    <h4>Petra K.</h4>
+                                    <div class="fb-stars">
+                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                            class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                            class="bi bi-star-fill"></i>
+                                    </div>
+                                </div>
+                                <i class="bi bi-facebook fb-logo-small"></i>
+                            </div>
+                            <p class="fb-review-text">Včera ukončen kurz veterinární manipulace, jehož výsledkem je, že
+                                se naše šílená borderka do vet ordinace těší 😊. Moc děkujeme a budeme se těšit na další
+                                lekce!</p>
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <div class="fb-review-card">
+                            <div class="fb-user">
+                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%232D8A84' d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z'/%3E%3C/svg%3E"
+                                    alt="Uživatel">
+                                <div class="fb-user-info">
+                                    <h4>Lucie S.</h4>
+                                    <div class="fb-stars">
+                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                            class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                            class="bi bi-star-fill"></i>
+                                    </div>
+                                </div>
+                                <i class="bi bi-facebook fb-logo-small"></i>
+                            </div>
+                            <p class="fb-review-text">Super přístup, trpělivost a vysvětlení všeho, co člověk dělal
+                                špatně. Pes je spokojený a já taky. Určitě doporučuji všem, kdo chtějí se psem pracovat
+                                hravě.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center" style="margin-top: 4rem;">
+                    <a href="https://www.facebook.com/vycvikpsuhrave/reviews" target="_blank"
+                        class="btn btn--secondary">
+                        <i class="bi bi-facebook"></i> Zobrazit všechny recenze
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kontakt & Rezervace -->
+        <section class="section" id="kontakt">
+
+            <div class="container">
+                <div class="grid-hravy">
+                    <div class="col-6">
+                        <h2>Ozvěte se mi</h2>
+                        <p style="font-size: 1.4rem;">Chcete mít ze psa parťáka do života? Napište mi.</p>
+
+                        <div class="grid-item" style="background: var(--clr-bg-dark); color: white; margin-top: 2rem;">
+                            <p><i class="bi bi-geo-alt-fill text-yellow"></i> Klášterec nad Ohří</p>
+                            <p><i class="bi bi-whatsapp text-yellow"></i> 776 009 890</p>
+                            <p><i class="bi bi-facebook text-yellow"></i> Výcvik psů hravě</p>
+                        </div>
+
+                        <div style="margin-top: 3rem;">
+                            <h3 style="color: var(--clr-secondary);">Rezervace termínů</h3>
+                            <a href="https://vycvikpsuhrave.dogres.cz/trainings" class="btn btn--primary"
+                                style="margin-bottom: 1rem;">Rezervační systém Dogres</a>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="grid-item grid-item--white" style="padding: 4rem;">
+                            <form action="#" class="contact-form">
+                                <div style="display:none;"><input name="honeypot"></div>
+                                <input type="text" placeholder="Vaše jméno"
+                                    style="width: 100%; padding: 1.2rem; border: 2px solid var(--clr-mint); border-radius: 12px; margin-bottom: 1.5rem;">
+                                <input type="email" placeholder="Váš E-mail"
+                                    style="width: 100%; padding: 1.2rem; border: 2px solid var(--clr-mint); border-radius: 12px; margin-bottom: 1.5rem;">
+                                <textarea placeholder="V čem vám mohu pomoci?"
+                                    style="width: 100%; padding: 1.2rem; border: 2px solid var(--clr-mint); border-radius: 12px; margin-bottom: 1.5rem;"
+                                    rows="5"></textarea>
+                                <button type="submit" class="btn btn--primary" style="width: 100%;">Odeslat
+                                    zprávu</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer
+        style="background: var(--clr-text-dark); color: white; padding: 5rem 0 3rem; border-radius: 100px 100px 0 0;">
+        <div class="container text-center">
+            <img src="Obrazky/Logo Vycvik psu hrave_1.png" alt="Logo" style="height: 80px; margin-bottom: 2rem;">
+            <h3>Vet-Kučera s.r.o.</h3>
+            <p>Osvobozená 208, 431 51 Klášterec nad Ohří</p>
+            <p style="opacity: 0.6; margin-top: 2rem;">IČO: 07555377 | DIČ: CZ07555377</p>
+        </div>
+    </footer>
+
+    <script src="script.js?v=1.1"></script>
+</body>
+
+</html>
