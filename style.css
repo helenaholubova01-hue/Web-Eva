@@ -10,6 +10,8 @@
     /* Nejtmavší zelená pro text */
     --clr-mint: #BFE8DD;
     /* Světlá mintová */
+    --clr-light-gray: #e8f5f2;
+    /* Velmi světlá mintová pro pozadí */
     --clr-white: #FFFFFF;
 
     --radius-flyer: 40px;
@@ -749,11 +751,11 @@ h3 {
 .footer {
     background: var(--clr-text-dark);
     color: white;
-    padding: 8rem 0 4rem;
-    border-radius: 120px 120px 0 0;
+    padding: 5rem 0 3rem;
+    border-radius: 80px 80px 0 0;
     position: relative;
     z-index: 10;
-    margin-top: 5rem;
+    margin-top: 3rem;
 }
 
 .footer__grid {
