@@ -233,22 +233,27 @@ h3 {
     align-items: center;
     position: relative;
     overflow: hidden;
-    padding: 120px 0 80px;
+    padding: 120px 0 100px;
+    z-index: 0;
+}
+
+.hero>.container {
+    transform: translateY(-60px);
 }
 
 /* Large white circle behind dogs - Smaller and with outline */
 .hero__circle-bg {
     position: absolute;
-    right: 5%;
+    right: 13%;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-62%);
     width: 45vw;
     height: 45vw;
     max-width: 550px;
     max-height: 550px;
     background: white;
     border-radius: 50%;
-    z-index: 1;
+    z-index: -1;
     border: 1px solid rgba(255, 255, 255, 0.3);
     /* Slabá linka kružnice */
     outline: 15px solid rgba(255, 255, 255, 0.05);
@@ -277,7 +282,7 @@ h3 {
     max-width: 700px;
     position: relative;
     z-index: 5;
-    transform: translateX(10%) translateY(5%);
+    transform: translateX(10%) translateY(calc(5% + 15px));
     /* Posun, aby dalmatin vykukoval */
     filter: drop-shadow(20px 20px 60px rgba(0, 0, 0, 0.2));
 }
@@ -302,6 +307,58 @@ h3 {
 
 .hero__logo-badge img {
     width: 80%;
+}
+
+/* Levitating Mint Icons */
+.hero__icon {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    z-index: 8;
+    animation: float 5s infinite ease-in-out;
+    margin-left: -15px;
+}
+
+.hero__icon img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.1));
+}
+
+.hero__icon--1 {
+    top: 55%;
+    /* Původně 35% */
+    left: 4%;
+    /* Původně 8% */
+    width: 110px;
+    height: 110px;
+    animation-delay: 0s;
+}
+
+.hero__icon--2 {
+    top: 92%;
+    /* Dole vlevo na hraně kruhu */
+    left: 15%;
+    animation-delay: 1.5s;
+}
+
+.hero__icon--3 {
+    top: 95%;
+    /* Uprostřed dole pod psy */
+    left: 50%;
+    animation-delay: 1s;
+}
+
+.hero__icon--4 {
+    top: 85%;
+    /* Dole vpravo, už ne na zádech */
+    right: 5%;
+    animation-delay: 2.5s;
+}
+
+.hero__icon:hover {
+    transform: scale(1.1) rotate(5deg);
+    z-index: 10;
 }
 
 @keyframes float {
@@ -624,6 +681,64 @@ h3 {
     }
 
     .nav-toggle {
+        display: flex;
+    }
+}
+
+/* Footer Modern Layout */
+.footer {
+    background: var(--clr-text-dark);
+    color: white;
+    padding: 8rem 0 4rem;
+    border-radius: 120px 120px 0 0;
+    position: relative;
+    z-index: 10;
+    margin-top: 5rem;
+}
+
+.footer__grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 4rem;
+}
+
+.footer__logo img {
+    height: 70px;
+}
+
+.social-links a {
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.social-links a:hover {
+    transform: translateY(-5px) scale(1.1);
+}
+
+@media (max-width: 992px) {
+    .footer {
+        border-radius: 60px 60px 0 0;
+        padding: 5rem 0 3rem;
+    }
+
+    .footer__grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+    }
+
+    .footer__logo img {
+        margin: 0 auto;
+    }
+
+    .footer__bottom {
+        justify-content: center !important;
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .social-links {
+        justify-content: center;
         display: flex;
     }
 }

@@ -57,7 +57,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const scrolled = window.pageYOffset || document.documentElement.scrollTop;
         const dogs = document.querySelector('.hero__dogs');
         const badge = document.querySelector('.hero__logo-badge');
-        if (dogs) dogs.style.transform = `translateY(${scrolled * 0.1}px)`;
-        if (badge) badge.style.transform = `translateY(${scrolled * -0.15}px) rotate(${scrolled * 0.05}deg)`;
+
+        // Musíme zachovat translateX(10%), které je v CSS, jinak psi "odskočí" doleva
+        if (dogs) {
+            dogs.style.transform = `translateX(10%) translateY(calc(5% + 15px + ${scrolled * 0.1}px))`;
+        }
+
+        if (badge) {
+            badge.style.transform = `translateY(${scrolled * -0.15}px) rotate(${scrolled * 0.05}deg)`;
+        }
     });
 });
