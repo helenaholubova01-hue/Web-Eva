@@ -670,8 +670,8 @@ h3 {
 .approach-img {
     position: relative;
     z-index: 5;
-    width: 130%;
-    max-width: 550px;
+    width: 150%;
+    max-width: 650px;
     filter: drop-shadow(15px 15px 30px rgba(0, 0, 0, 0.1));
     transform: translateY(-10px);
     transition: transform 0.5s ease;
