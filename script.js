@@ -26,14 +26,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!header) return;
 
         const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-        console.log('Scroll position:', scrollPosition);
-
         if (scrollPosition > 50) {
             header.classList.add('scrolled');
-            console.log('Class "scrolled" added');
         } else {
             header.classList.remove('scrolled');
-            console.log('Class "scrolled" removed');
         }
     };
 
@@ -67,4 +63,33 @@ document.addEventListener('DOMContentLoaded', () => {
             badge.style.transform = `translateY(${scrolled * -0.15}px) rotate(${scrolled * 0.05}deg)`;
         }
     });
+
+    // Vet Gallery Slider Logic
+    const slides = document.querySelectorAll('.vet-slide');
+    const dots = document.querySelectorAll('.vet-dot');
+
+    if (slides.length > 0 && dots.length > 0) {
+        let currentSlide = 0;
+
+        const showSlide = (index) => {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentSlide = index;
+        };
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(index);
+            });
+        });
+
+        // Auto play (optional, slow 5s)
+        setInterval(() => {
+            let next = (currentSlide + 1) % slides.length;
+            showSlide(next);
+        }, 5000);
+    }
 });

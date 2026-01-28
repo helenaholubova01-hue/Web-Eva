@@ -16,7 +16,7 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Outfit:wght@300;400;600;700&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css?v=1.2">
+    <link rel="stylesheet" href="style.css?v=1.3">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
 
@@ -116,7 +116,8 @@
                         <p style="font-size: 1.2rem; line-height: 1.8;">Pořídíte si štěně, těšíte se, jak vám to spolu
                             půjde. Věnujete se mu, snažíte se, učíte povely… Ze začátku to funguje – a pak najednou
                             začne něco skřípat.</p>
-                        <p>Štěně venku nevnímá, nereaguje. A když přijde puberta, pes jako by „zapomněl“, co uměl.
+                        <p style="font-size: 1.2rem; line-height: 1.8;">Štěně venku nevnímá, nereaguje. A když přijde
+                            puberta, pes jako by „zapomněl“, co uměl.
                             Najednou je to jiné, než jste si představovali.</p>
 
                         <div class="grid-item grid-item--yellow" style="margin-top: 3rem; transform: rotate(-1deg);">
@@ -161,7 +162,8 @@
                         <p style="font-size: 1.2rem; line-height: 1.8;">Pořídíte si štěně, těšíte se, jak vám to spolu
                             půjde. Věnujete se mu, snažíte se, učíte povely… Ze začátku to funguje – a pak najednou
                             začne něco skřípat.</p>
-                        <p>Štěně venku nevnímá, nereaguje. A když přijde puberta, pes jako by „zapomněl“, co uměl.
+                        <p style="font-size: 1.2rem; line-height: 1.8;">Štěně venku nevnímá, nereaguje. A když přijde
+                            puberta, pes jako by „zapomněl“, co uměl.
                             Najednou je to jiné, než jste si představovali.</p>
 
                         <div class="grid-item grid-item--yellow" style="margin-top: 3rem; transform: rotate(-1deg);">
@@ -308,7 +310,26 @@
                 <div class="grid-hravy">
                     <div class="col-5">
                         <div class="overlap-container">
-                            <img src="Obrazky/vet manipulace 1.jpg" alt="Veterina" class="img-main">
+                            <!-- Galerie místo jednoho obrázku -->
+                            <div class="vet-gallery">
+                                <div class="vet-slide active">
+                                    <img src="Obrazky/vet manipulace 1.jpg" alt="Veterina 1">
+                                </div>
+                                <div class="vet-slide">
+                                    <img src="Obrazky/vet manipulace 2.jpg" alt="Veterina 2">
+                                </div>
+                                <div class="vet-slide">
+                                    <img src="Obrazky/20260103_101846.jpg" alt="Veterina 3">
+                                </div>
+
+                                <div class="vet-dots">
+                                    <span class="vet-dot active" data-index="0"></span>
+                                    <span class="vet-dot" data-index="1"></span>
+                                    <span class="vet-dot" data-index="2"></span>
+                                </div>
+                            </div>
+
+                            <!-- Původní překryvné prvky zůstávají pevně na místě -->
                             <img src="Obrazky/vet manipulace 5.jpg" alt="Detail" class="img-sub"
                                 style="width: 250px; bottom: -20px; right: -20px;">
                             <div
@@ -555,42 +576,118 @@
 
         <!-- Kontakt & Rezervace -->
         <section class="section" id="kontakt">
-
             <div class="container">
-                <div class="grid-hravy">
+                <div class="text-center" style="margin-bottom: 4rem;">
+                    <h2>Rezervujte si termín</h2>
+                    <p style="font-size: 1.3rem; max-width: 700px; margin: 1rem auto;">
+                        Vyberte si, co vás zajímá, a rezervujte si volný termín přímo online.
+                    </p>
+                </div>
+
+                <!-- Dva hlavní rezervační bloky -->
+                <div class="grid-hravy" style="margin-bottom: 5rem;">
                     <div class="col-6">
-                        <h2>Ozvěte se mi</h2>
-                        <p style="font-size: 1.4rem;">Chcete mít ze psa parťáka do života? Napište mi.</p>
-
-                        <div class="grid-item" style="background: var(--clr-bg-dark); color: white; margin-top: 2rem;">
-                            <p style="margin-bottom: 1rem;"><i class="bi bi-geo-alt-fill text-yellow"></i> Klášterec nad
-                                Ohří</p>
-                            <p style="margin-bottom: 1rem;"><i class="bi bi-whatsapp text-yellow"></i> 776 009 890</p>
-                            <p style="margin-bottom: 1rem;"><i class="bi bi-envelope-fill text-yellow"></i>
-                                vycvik-hrave@seznam.cz</p>
-                            <p style="margin: 0;"><i class="bi bi-facebook text-yellow"></i> Výcvik psů hravě</p>
-                        </div>
-
-                        <div style="margin-top: 3rem;">
-                            <h3 style="color: var(--clr-secondary);">Rezervace termínů</h3>
-                            <a href="https://vycvikpsuhrave.dogres.cz/trainings" class="btn btn--primary"
-                                style="margin-bottom: 1rem;">Rezervační systém Dogres</a>
+                        <div class="grid-item grid-item--yellow"
+                            style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; padding: 3rem; transform: rotate(-1deg);">
+                            <div>
+                                <h3 style="margin-bottom: 1.5rem; font-size: 1.8rem;">
+                                    <i class="bi bi-calendar-check-fill"></i> Socializační procházky & Veterinární
+                                    manipulace
+                                </h3>
+                                <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 2rem;">
+                                    Individuální lekce, kurzy veterinární manipulace a socializační procházky.
+                                    Rezervujte si termín, který vám vyhovuje.
+                                </p>
+                            </div>
+                            <a href="https://vycvikpsuhrave.dogres.cz/trainings" target="_blank"
+                                class="btn btn--primary" style="width: 100%; font-size: 1.2rem; padding: 1.2rem;">
+                                <i class="bi bi-arrow-right-circle-fill"></i> Rezervovat termín
+                            </a>
                         </div>
                     </div>
+
                     <div class="col-6">
-                        <div class="grid-item grid-item--white" style="padding: 4rem;">
+                        <div class="grid-item"
+                            style="background: var(--clr-mint); height: 100%; display: flex; flex-direction: column; justify-content: space-between; padding: 3rem; transform: rotate(1deg);">
+                            <div>
+                                <h3 style="margin-bottom: 1.5rem; font-size: 1.8rem; color: var(--clr-text-dark);">
+                                    <i class="bi bi-people-fill"></i> Skupinové lekce na cvičáku
+                                </h3>
+                                <p
+                                    style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 2rem; color: var(--clr-text-dark);">
+                                    Tréninky v areálu ZKO Klášterec nad Ohří. Skupinové lekce pro psy všech věkových
+                                    kategorií.
+                                </p>
+                            </div>
+                            <a href="https://zkoklasterec.dogres.cz/trainings" target="_blank"
+                                class="btn btn--secondary" style="width: 100%; font-size: 1.2rem; padding: 1.2rem;">
+                                <i class="bi bi-arrow-right-circle-fill"></i> Rezervovat lekci
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kontaktní informace a formulář - upozaděné -->
+                <div class="grid-hravy">
+                    <div class="col-6">
+                        <h3 style="color: var(--clr-secondary); margin-bottom: 1.5rem;">Nebo mi napište</h3>
+                        <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+                            Máte dotaz? Nevíte si rady? Napište mi a já se vám ozvu co nejdříve.
+                        </p>
+
+                        <div class="grid-item grid-item--white" style="padding: 2.5rem;">
                             <form action="#" class="contact-form">
                                 <div style="display:none;"><input name="honeypot"></div>
-                                <input type="text" placeholder="Vaše jméno"
-                                    style="width: 100%; padding: 1.2rem; border: 2px solid var(--clr-mint); border-radius: 12px; margin-bottom: 1.5rem;">
-                                <input type="email" placeholder="Váš E-mail"
-                                    style="width: 100%; padding: 1.2rem; border: 2px solid var(--clr-mint); border-radius: 12px; margin-bottom: 1.5rem;">
-                                <textarea placeholder="V čem vám mohu pomoci?"
-                                    style="width: 100%; padding: 1.2rem; border: 2px solid var(--clr-mint); border-radius: 12px; margin-bottom: 1.5rem;"
-                                    rows="5"></textarea>
-                                <button type="submit" class="btn btn--primary" style="width: 100%;">Odeslat
-                                    zprávu</button>
+                                <input type="text" placeholder="Vaše jméno" required
+                                    style="width: 100%; padding: 1rem; border: 2px solid var(--clr-mint); border-radius: 12px; margin-bottom: 1.2rem; font-size: 1rem;">
+                                <input type="email" placeholder="Váš E-mail" required
+                                    style="width: 100%; padding: 1rem; border: 2px solid var(--clr-mint); border-radius: 12px; margin-bottom: 1.2rem; font-size: 1rem;">
+                                <textarea placeholder="V čem vám mohu pomoci?" required
+                                    style="width: 100%; padding: 1rem; border: 2px solid var(--clr-mint); border-radius: 12px; margin-bottom: 1.2rem; font-size: 1rem;"
+                                    rows="4"></textarea>
+                                <button type="submit" class="btn btn--primary" style="width: 100%;">
+                                    <i class="bi bi-send-fill"></i> Odeslat zprávu
+                                </button>
                             </form>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <h3 style="color: var(--clr-secondary); margin-bottom: 1.5rem;">Kontaktní údaje</h3>
+
+                        <div
+                            style="background: var(--clr-light-gray); padding: 2rem; border-radius: 20px; border-left: 4px solid var(--clr-primary);">
+                            <p
+                                style="margin-bottom: 1.2rem; font-size: 1.05rem; display: flex; align-items: center; gap: 0.8rem;">
+                                <i class="bi bi-geo-alt-fill" style="color: var(--clr-primary); font-size: 1.3rem;"></i>
+                                <span>Klášterec nad Ohří</span>
+                            </p>
+                            <p
+                                style="margin-bottom: 1.2rem; font-size: 1.05rem; display: flex; align-items: center; gap: 0.8rem;">
+                                <i class="bi bi-whatsapp" style="color: var(--clr-primary); font-size: 1.3rem;"></i>
+                                <a href="tel:+420776009890"
+                                    style="color: var(--clr-text-dark); text-decoration: none;">776 009 890</a>
+                            </p>
+                            <p
+                                style="margin-bottom: 1.2rem; font-size: 1.05rem; display: flex; align-items: center; gap: 0.8rem;">
+                                <i class="bi bi-envelope-fill"
+                                    style="color: var(--clr-primary); font-size: 1.3rem;"></i>
+                                <a href="mailto:vycvik-hrave@seznam.cz"
+                                    style="color: var(--clr-text-dark); text-decoration: none;">vycvik-hrave@seznam.cz</a>
+                            </p>
+                            <p style="margin: 0; font-size: 1.05rem; display: flex; align-items: center; gap: 0.8rem;">
+                                <i class="bi bi-facebook" style="color: var(--clr-primary); font-size: 1.3rem;"></i>
+                                <a href="https://www.facebook.com/vycvikpsuhrave/" target="_blank"
+                                    style="color: var(--clr-text-dark); text-decoration: none;">Výcvik psů hravě</a>
+                            </p>
+                        </div>
+
+                        <div
+                            style="margin-top: 2rem; padding: 1.5rem; background: white; border-radius: 15px; border: 2px solid var(--clr-mint);">
+                            <p style="margin: 0; font-size: 0.95rem; color: var(--clr-text-dark); opacity: 0.8;">
+                                <i class="bi bi-info-circle-fill" style="color: var(--clr-mint);"></i>
+                                Odpovídám obvykle do 24 hodin. Těším se na vaši zprávu!
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -695,7 +792,7 @@
         </div>
     </footer>
 
-    <script src="script.js?v=1.2"></script>
+    <script src="script.js?v=1.3"></script>
 </body>
 
 </html>
