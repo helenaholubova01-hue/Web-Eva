@@ -326,32 +326,30 @@ h3 {
 }
 
 .hero__icon--1 {
-    top: 55%;
-    /* Původně 35% */
+    top: 50%;
     left: 4%;
-    /* Původně 8% */
-    width: 110px;
-    height: 110px;
+    width: 105px;
+    height: 105px;
     animation-delay: 0s;
 }
 
 .hero__icon--2 {
-    top: 92%;
-    /* Dole vlevo na hraně kruhu */
+    top: 69%;
+    /* Přizvednuto o další 2% pro dokonalý balanc */
     left: 15%;
     animation-delay: 1.5s;
 }
 
 .hero__icon--3 {
-    top: 95%;
-    /* Uprostřed dole pod psy */
-    left: 50%;
+    top: 74%;
+    /* Přizvednuto o 8% */
+    left: 45%;
     animation-delay: 1s;
 }
 
 .hero__icon--4 {
-    top: 85%;
-    /* Dole vpravo, už ne na zádech */
+    top: 68%;
+    /* Posunuto nahoru */
     right: 5%;
     animation-delay: 2.5s;
 }
@@ -698,12 +696,38 @@ h3 {
 
 .footer__grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1.5fr;
-    gap: 4rem;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    /* Levému dáváme ještě míň prostoru */
+    gap: 2rem;
+}
+
+.footer__col:nth-child(2),
+.footer__col:nth-child(3) {
+    margin-left: auto;
+    /* Tohle je ten elegantní posun doprava */
+    min-width: 200px;
 }
 
 .footer__logo img {
     height: 70px;
+}
+
+.footer__contact-link {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.footer__contact-link:hover {
+    color: var(--clr-primary);
+    transform: translateX(5px);
+}
+
+.footer__contact-link i {
+    font-size: 1.2rem;
 }
 
 .social-links a {
