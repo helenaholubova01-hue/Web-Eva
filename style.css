@@ -684,35 +684,191 @@ h3 {
 /* Responsive */
 
 @media (max-width: 992px) {
+    /* Základní nastavení */
+    html {
+        font-size: 16px;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .container {
+        padding: 0 1.5rem;
+    }
+
+    .section {
+        padding: 4rem 0;
+    }
+
+    /* Hero sekce */
     .hero {
         text-align: center;
+        padding: 100px 0 50px;
+    }
+
+    .hero > .container {
+        flex-direction: column;
+        transform: none;
     }
 
     .hero__circle-bg {
-        width: 120vw;
-        height: 120vw;
-        top: 70%;
-        right: -10vw;
-        transform: translate(0, -50%);
+        display: none;
     }
 
     .hero__content {
         margin: 0 auto;
+        transform: none;
+        max-width: 100%;
     }
 
     .hero__image-container {
-        margin-top: 4rem;
+        margin-top: 2rem;
         justify-content: center;
-    }
-
-    .hero__dogs {
         width: 100%;
     }
 
-    .grid-hravy>* {
-        grid-column: span 12 !important;
+    .hero__dogs {
+        width: 85%;
+        max-width: 320px;
+        transform: none;
     }
 
+    .hero__logo-badge {
+        width: 90px;
+        height: 90px;
+        top: -20px;
+        right: 5%;
+    }
+
+    .hero__actions {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .hero__actions .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    /* Levitující ikony - zmenšené */
+    .hero__icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .hero__icon--1 {
+        top: 55%;
+        left: 2%;
+    }
+
+    .hero__icon--2 {
+        top: 70%;
+        left: 10%;
+    }
+
+    .hero__icon--3 {
+        top: 78%;
+        left: 40%;
+    }
+
+    .hero__icon--4 {
+        top: 65%;
+        right: 2%;
+    }
+
+    /* Typography - čitelné */
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+    }
+
+    p, li {
+        font-size: 1.05rem;
+        line-height: 1.7;
+    }
+
+    /* Grid */
+    .grid-hravy {
+        gap: 1.5rem;
+    }
+
+    .grid-hravy > * {
+        grid-column: span 12 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .grid-item {
+        padding: 1.5rem !important;
+        transform: none !important;
+    }
+
+    /* Obrázky */
+    .img-hravy {
+        height: 250px !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    .overlap-container {
+        padding: 0 !important;
+    }
+
+    .overlap-container > div[style*="position: absolute"] {
+        position: relative !important;
+        transform: none !important;
+        left: 0 !important;
+        bottom: 0 !important;
+        margin-top: 1rem;
+        max-width: 100% !important;
+    }
+
+    /* Approach sekce */
+    .approach-visual {
+        height: auto;
+        margin-bottom: 2rem;
+    }
+
+    .approach-circle {
+        width: 200px;
+        height: 200px;
+    }
+
+    .approach-img {
+        width: 100% !important;
+        max-width: 280px !important;
+    }
+
+    /* Veterinární sekce */
+    .section--dark {
+        padding: 4rem 0 !important;
+    }
+
+    .vet-gallery {
+        width: 100%;
+        aspect-ratio: 4/3;
+    }
+
+    .img-sub {
+        display: none;
+    }
+
+    /* Tlačítka */
+    .btn {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+
+    /* Navigace */
     .nav {
         position: fixed;
         top: 0;
@@ -734,16 +890,81 @@ h3 {
 
     .nav__list {
         flex-direction: column;
-        gap: 2.5rem;
+        gap: 2rem;
         text-align: center;
     }
 
     .nav__link {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
 
     .nav-toggle {
         display: flex;
+    }
+
+    /* Label */
+    .label {
+        font-size: 0.75rem;
+        padding: 0.4rem 1rem;
+    }
+
+    /* Sekce Nejčastěji řešíme - grid na 1 sloupec */
+    .grid-item--yellow div[style*="grid-template-columns"] {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Areál ZKO - karty pod sebe */
+    .grid-item--white div[style*="display: flex"][style*="gap: 1.5rem"] {
+        flex-direction: column;
+    }
+
+    /* Veterinární sekce - karty pod sebe */
+    div[style*="grid-template-columns: 1fr 1fr"][style*="gap: 2rem"] {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Vet galerie - na výšku */
+    .vet-gallery {
+        aspect-ratio: 3/4 !important;
+    }
+
+    /* Malá fotka ve vet sekci - zobrazit */
+    .img-sub {
+        display: block !important;
+        position: relative !important;
+        width: 100% !important;
+        margin-top: 1rem;
+        right: auto !important;
+        bottom: auto !important;
+    }
+
+    /* Footer - zarovnání vlevo */
+    .footer__grid {
+        text-align: left;
+    }
+
+    .footer__col {
+        text-align: left;
+    }
+
+    .footer__logo img {
+        margin: 0;
+    }
+
+    .footer__contact-link {
+        justify-content: flex-start;
+    }
+
+    .social-links {
+        justify-content: flex-start !important;
+    }
+
+    .footer__bottom {
+        text-align: left !important;
+    }
+
+    .footer__bottom > div:first-child {
+        align-items: flex-start;
     }
 }
 
