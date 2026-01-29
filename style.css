@@ -4,7 +4,7 @@
     /* Žlutá */
     --clr-secondary: #2D8A84;
     /* Tmavší mintová */
-    --clr-bg-dark: #1F6F6B;
+    --clr-bg-dark: #267675;
     /* Tmavě zelená Hero */
     --clr-text-dark: #184B47;
     /* Nejtmavší zelená pro text */
@@ -53,6 +53,7 @@ h1 {
     font-size: clamp(3rem, 10vw, 5.5rem);
     line-height: 0.95;
     letter-spacing: -0.03em;
+    text-transform: uppercase;
 }
 
 h2 {
@@ -114,6 +115,7 @@ h3 {
     z-index: 1000;
     padding: 2rem 0;
     transition: all 0.4s ease-in-out;
+    background-color: transparent;
 }
 
 .container--nav {
@@ -229,37 +231,28 @@ h3 {
 
 /* HERO - The Masterpiece */
 .hero {
-    min-height: auto;
-    background: var(--clr-bg-dark);
+    min-height: 100vh;
+    background: #267675 url('Obrazky/logopsi.jpg') no-repeat center 80px;
+    background-size: cover;
     display: flex;
     align-items: center;
     position: relative;
     overflow: hidden;
-    padding: 120px 0 60px;
+    padding: 180px 0 60px;
     z-index: 0;
 }
 
 .hero>.container {
-    transform: translateY(-60px);
+    transform: none;
 }
 
 /* Large white circle behind dogs - Smaller and with outline */
 .hero__circle-bg {
-    position: absolute;
-    right: -50px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 45vw;
-    height: 45vw;
-    max-width: 550px;
-    max-height: 550px;
-    background: white;
-    border-radius: 50%;
-    z-index: 1;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    /* Slabá linka kružnice */
-    outline: 15px solid rgba(255, 255, 255, 0.05);
-    /* Druhá vnější linka pro hloubku */
+    display: none; /* Dočasně skryto */
+}
+
+.hero__mobile-img {
+    display: none; /* Skryto na desktopu */
 }
 
 .hero__content {
@@ -267,6 +260,8 @@ h3 {
     z-index: 5;
     max-width: 600px;
     transform: translateY(-20px);
+    margin-right: auto;
+    margin-left: 0;
 }
 
 .hero__image-container {
@@ -279,32 +274,12 @@ h3 {
 }
 
 .hero__dogs {
-    width: 130%;
-    /* Zvětšeno, aby vyčnívali */
-    max-width: 700px;
-    position: relative;
-    z-index: 5;
-    transform: translateX(10%) translateY(calc(5% + 15px));
-    /* Posun, aby dalmatin vykukoval */
-    filter: drop-shadow(20px 20px 60px rgba(0, 0, 0, 0.2));
+    display: none; /* Dočasně skryto */
 }
 
 /* Yellow levitating logo - Enlarged 1.5x */
 .hero__logo-badge {
-    position: absolute;
-    top: 40px;
-    right: 32%;
-    width: 220px;
-    /* Zvětšeno z 150px (cca 1.5x) */
-    height: 220px;
-    background: var(--clr-primary);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-    animation: float 6s infinite ease-in-out;
+    display: none; /* Dočasně skryto */
 }
 
 .hero__logo-badge img {
@@ -313,12 +288,7 @@ h3 {
 
 /* Levitating Mint Icons */
 .hero__icon {
-    position: absolute;
-    width: 120px;
-    height: 120px;
-    z-index: 8;
-    animation: float 5s infinite ease-in-out;
-    margin-left: -15px;
+    display: none; /* Dočasně skryto */
 }
 
 .hero__icon img {
@@ -705,6 +675,15 @@ h3 {
     .hero {
         text-align: center;
         padding: 100px 0 50px;
+        background: #267675;
+    }
+
+    .hero__mobile-img {
+        display: block;
+        width: 80%;
+        max-width: 300px;
+        margin: 0 auto 2rem;
+        border-radius: 20px;
     }
 
     .hero > .container {
@@ -736,9 +715,7 @@ h3 {
     }
 
     .hero__dogs {
-        width: 85%;
-        max-width: 320px;
-        transform: none;
+        display: none !important;
     }
 
     .hero__logo-badge {
@@ -788,7 +765,7 @@ h3 {
 
     /* Typography - čitelné */
     h1 {
-        font-size: 2.2rem;
+        font-size: 1.6rem;
     }
 
     h2 {
@@ -907,6 +884,8 @@ h3 {
 
     .nav-toggle {
         display: flex;
+        position: relative;
+        z-index: 1100;
     }
 
     /* Label */
