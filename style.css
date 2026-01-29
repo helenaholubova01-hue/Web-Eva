@@ -713,7 +713,13 @@ h3 {
     }
 
     .hero__circle-bg {
-        display: none;
+        display: block;
+        width: 200px;
+        height: 200px;
+        right: 50%;
+        transform: translateX(50%) translateY(-50%);
+        top: 50%;
+        outline-width: 8px;
     }
 
     .hero__content {
@@ -726,6 +732,7 @@ h3 {
         margin-top: 2rem;
         justify-content: center;
         width: 100%;
+        position: relative;
     }
 
     .hero__dogs {
@@ -737,8 +744,8 @@ h3 {
     .hero__logo-badge {
         width: 90px;
         height: 90px;
-        top: -20px;
-        right: 5%;
+        top: 30px;
+        right: 15%;
     }
 
     .hero__actions {
@@ -916,6 +923,31 @@ h3 {
     /* Areál ZKO - karty pod sebe */
     .grid-item--white div[style*="display: flex"][style*="gap: 1.5rem"] {
         flex-direction: column;
+    }
+
+    /* Areál ZKO - karty na bílou barvu na mobilu */
+    .section--mint .grid-item--white div[style*="background: var(--clr-mint)"] {
+        background: white !important;
+        border: 2px solid var(--clr-mint);
+    }
+
+    /* Vet sekce - ikona srdíčka v rohu fotky */
+    .section--dark .overlap-container {
+        position: relative;
+    }
+
+    .section--dark .overlap-container > div[style*="border-radius: 50%"] {
+        position: absolute !important;
+        top: -25px !important;
+        left: -15px !important;
+        transform: none !important;
+        width: 70px !important;
+        height: 70px !important;
+        z-index: 10 !important;
+    }
+
+    .section--dark .overlap-container > div[style*="border-radius: 50%"] i {
+        font-size: 1.8rem !important;
     }
 
     /* Veterinární sekce - karty pod sebe */
