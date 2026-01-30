@@ -170,18 +170,28 @@ h3 {
 
 .nav-toggle {
     display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 32px;
-    height: 22px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    z-index: 1100;
+}
+
+@media (max-width: 992px) {
+    .nav-toggle {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 40px;
+        height: 30px;
+        background: red !important; /* DOČASNĚ - pro test */
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+        z-index: 99999;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
 }
 
 .nav-toggle span {
+    display: block;
     width: 100%;
     height: 3px;
     background: white;
@@ -669,6 +679,22 @@ h3 {
         padding: 0 1.5rem;
     }
 
+    /* Header na mobilu */
+    .header {
+        padding: 1rem 0;
+        background-color: var(--clr-bg-dark);
+    }
+
+    .container--nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
     .section {
         padding: 4rem 0;
     }
@@ -881,20 +907,6 @@ h3 {
         font-size: 1.5rem;
     }
 
-    .nav-toggle {
-        display: flex !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        position: relative;
-        z-index: 99999;
-        width: 32px;
-        height: 22px;
-    }
-
-    .nav-toggle span {
-        display: block !important;
-        background: white !important;
-    }
 
     /* Label */
     .label {
