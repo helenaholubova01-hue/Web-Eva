@@ -116,8 +116,11 @@ h3 {
 }
 
 /* Header - Transparent to solid */
+/* Header - Transparent to solid */
 .header {
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     z-index: 9999;
     padding: 0.3rem 0;
