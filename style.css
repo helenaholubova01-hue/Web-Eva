@@ -107,7 +107,9 @@ h3 {
 .btn--pastel {
     background: var(--clr-pastel);
     color: var(--clr-text-dark);
-    box-shadow: 0 15px 30px rgba(168, 212, 176, 0.4);
+    box-shadow: none !important;
+    /* Bez stínu podle přání */
+    transition: transform 0.3s ease;
 }
 
 .btn:hover {
@@ -149,6 +151,8 @@ h3 {
     font-size: 1.4rem;
     display: flex;
     align-items: center;
+    color: var(--clr-primary) !important;
+    /* Žlutá ikona pořád */
 }
 
 .btn--nav {
@@ -245,11 +249,13 @@ h3 {
     min-height: calc(100vh - 70px);
     background: #267675 url('Obrazky/Desktop3.jpg') no-repeat center top;
     background-size: cover;
+    background-position: center 80px;
     display: flex;
     align-items: center;
     position: relative;
     overflow: hidden;
-    padding: 60px 0;
+    padding: 180px 0 60px 0;
+    /* Zvětšeno ze 100px pro posun textu pod logo */
     z-index: 0;
 }
 
@@ -257,11 +263,7 @@ h3 {
     transform: none;
 }
 
-/* Large white circle behind dogs - Smaller and with outline */
-.hero__circle-bg {
-    display: none;
-    /* Dočasně skryto */
-}
+
 
 .hero__mobile-img {
     display: none;
@@ -327,88 +329,34 @@ h3 {
     transform: translateY(-20px);
     margin-right: auto;
     margin-left: 0;
+    /* Sjednocený elegantní glass efekt - 20% černá */
+    background: rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-.hero__image-container {
-    position: relative;
-    z-index: 2;
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+/* Odstranění stínu z ikonek kytiček */
+.hero__list li i {
+    text-shadow: none !important;
 }
 
-.hero__dogs {
-    display: none;
-    /* Dočasně skryto */
-}
 
-/* Yellow levitating logo - Enlarged 1.5x */
-.hero__logo-badge {
-    display: none;
-    /* Dočasně skryto */
-}
 
-.hero__logo-badge img {
-    width: 80%;
-}
-
-/* Levitating Mint Icons */
-.hero__icon {
-    display: none;
-    /* Dočasně skryto */
-}
-
-.hero__icon img {
-    width: 100%;
-    height: auto;
-    filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.1));
-}
-
-.hero__icon--1 {
-    top: 50%;
-    left: 4%;
-    width: 105px;
-    height: 105px;
-    animation-delay: 0s;
-}
-
-.hero__icon--2 {
-    top: 69%;
-    /* Přizvednuto o další 2% pro dokonalý balanc */
-    left: 15%;
-    animation-delay: 1.5s;
-}
-
-.hero__icon--3 {
-    top: 74%;
-    /* Přizvednuto o 8% */
-    left: 45%;
-    animation-delay: 1s;
-}
-
-.hero__icon--4 {
-    top: 68%;
-    /* Posunuto nahoru */
-    right: 5%;
-    animation-delay: 2.5s;
-}
-
-.hero__icon:hover {
-    transform: scale(1.1) rotate(5deg);
-    z-index: 10;
-}
-
-@keyframes float {
-
-    0%,
-    100% {
-        transform: translateY(0) rotate(0);
-    }
-
-    50% {
-        transform: translateY(-20px) rotate(5deg);
-    }
+/* Globální styl pro Labely (stejný jako na mobilu - bez rámečku) */
+.label {
+    font-size: 0.9rem;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: var(--clr-primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    border-radius: 0;
 }
 
 /* Sections & Asymmetry */
@@ -458,6 +406,31 @@ h3 {
     grid-template-columns: repeat(12, 1fr);
     gap: 3rem;
     align-items: center;
+}
+
+/* Approach Images Hover Effect */
+.approach-visual {
+    position: relative;
+    cursor: pointer;
+}
+
+.approach-img {
+    width: 100%;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    will-change: transform;
+}
+
+.approach-visual:hover .approach-img {
+    transform: scale(1.05);
+}
+
+/* Zachování zrcadlení pro sekci Můj přístup při hoveru */
+.approach-img--mirrored {
+    transform: scaleX(-1);
+}
+
+.approach-visual:hover .approach-img--mirrored {
+    transform: scaleX(-1) scale(1.05);
 }
 
 .grid-item {
@@ -932,22 +905,16 @@ h3 {
         transform: none;
         max-width: 100%;
         text-align: center;
+        background: rgba(0, 0, 0, 0.2);
     }
 
-    /* Stín jen pro landscape orientaci (na ležato) */
+    /* Skleněný efekt pro landscape orientaci */
     @media (orientation: landscape) {
-
-        .hero__content h1,
-        .hero__content .hero__location-title {
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8) !important;
-        }
-
-        /* Jemné podbarvení pro landscape */
         .hero__content {
-            background: rgba(0, 0, 0, 0.1);
-            padding: 1rem;
-            border-radius: 20px;
-            backdrop-filter: blur(2px);
+            background: rgba(0, 0, 0, 0.2) !important;
+            padding: 1.5rem !important;
+            border-radius: 25px !important;
+            backdrop-filter: blur(10px) !important;
             margin-top: 1rem;
         }
     }
@@ -1472,5 +1439,68 @@ h3 {
     /* Odstranění paddingu nad Rezervujte si termín (cca 40px) */
     #kontakt {
         padding-top: 0 !important;
+    }
+}
+
+/* --- TABLET / DESKTOP FIXES (min-width: 992px) --- */
+@media (min-width: 992px) {
+    .hero__content {
+        max-width: 800px;
+        margin-top: 60px;
+        /* Sjednocený černý glass efekt */
+        background: rgba(0, 0, 0, 0.2);
+        padding: 2.5rem;
+        border-radius: 35px;
+        backdrop-filter: blur(10px);
+    }
+
+    .hero__content h1,
+    .hero__list {
+        max-width: 550px;
+        /* Text omezen, aby nezasahoval do loga */
+    }
+
+    .hero__content h1 {
+        align-items: flex-start;
+        text-align: left;
+        font-size: 3.2rem;
+        text-shadow: 0 2px 15px rgba(0, 0, 0, 0.6);
+        /* Výrazný tmavý stín */
+    }
+
+    .hero__list {
+        text-align: left;
+        margin-left: 0.5rem !important;
+    }
+
+    .hero__actions {
+        display: flex;
+        gap: 2rem;
+        /* Větší rozestup tlačítek */
+        flex-direction: row;
+        /* Vedle sebe */
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        /* Tlačítka se nezalomí */
+        width: 100%;
+        /* Plná šířka kontejneru 800px */
+    }
+
+    .text-yellow {
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+        /* Tmavý stín pro žlutou */
+    }
+}
+
+/* --- LARGE SCREEN FIXES (min-width: 1400px) --- */
+@media (min-width: 1400px) {
+
+    /* Na velkém monitoru už text do psů nezasahuje -> zrušíme Glass pozadí */
+    .hero__content {
+        background: transparent !important;
+        padding: 0 !important;
+        backdrop-filter: none !important;
+        box-shadow: none !important;
+        margin-top: 80px !important;
     }
 }
