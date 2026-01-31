@@ -890,14 +890,15 @@ h3 {
     }
 
     .section {
-        padding: 4rem 0;
+        padding: 2.5rem 0;
+        /* Zmenšeno z 4rem na 2.5rem (podle požadavku) */
     }
 
     /* Hero sekce */
     .hero {
         text-align: center;
-        padding: 360px 0 30px;
-        /* Zvětšeno z 320px na 360px - text níž */
+        padding: 280px 0 30px;
+        /* Zmenšeno pro posunutí H1 výše */
         background: #267675 url('Obrazky/mobil4.jpg') no-repeat center top;
         background-size: 100% auto;
         overflow: hidden;
@@ -930,6 +931,24 @@ h3 {
         text-align: center;
     }
 
+    /* Stín jen pro landscape orientaci (na ležato) */
+    @media (orientation: landscape) {
+
+        .hero__content h1,
+        .hero__content .hero__location-title {
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8) !important;
+        }
+
+        /* Jemné podbarvení pro landscape */
+        .hero__content {
+            background: rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            border-radius: 20px;
+            backdrop-filter: blur(2px);
+            margin-top: 1rem;
+        }
+    }
+
     .hero__content h1 {
         font-size: 2.6rem;
         /* Zvětšeno z 2.3rem */
@@ -940,16 +959,21 @@ h3 {
         /* Jemné rozvolnění */
     }
 
-    /* Tři věty s kytičkami - zmenšeno */
+    /* Tři věty s kytičkami - zarovnání vlevo ale blok na střed */
     .hero__list {
-        margin: 1.5rem 0 !important;
-        /* Zmenšeno z 3rem */
+        margin: 1.5rem auto !important;
+        display: inline-block !important;
+        /* Aby byl blok jen tak široký jak text */
+        text-align: left;
+        /* Text uvnitř vlevo */
+        max-width: 90%;
     }
 
     .hero__list li {
         font-size: 1rem !important;
         /* Zmenšeno z 1.4rem */
-        margin-bottom: 0.6rem !important;
+        margin-bottom: 0.4rem !important;
+        /* Menší řádkování */
     }
 
     /* Odstavec pod kytičkami - skrytý na mobilu */
@@ -1020,10 +1044,14 @@ h3 {
 
     h2 {
         font-size: 1.8rem;
+        margin-bottom: 1rem !important;
+        /* Menší mezera pod nadpisem */
     }
 
     h3 {
         font-size: 1.4rem;
+        margin-bottom: 0.8rem !important;
+        /* Menší mezera pod nadpisem */
     }
 
     p,
@@ -1034,7 +1062,8 @@ h3 {
 
     /* Grid */
     .grid-hravy {
-        gap: 1.5rem;
+        gap: 1.5rem !important;
+        /* Zvětšeno z 1rem na 1.5rem */
     }
 
     .grid-hravy>* {
@@ -1195,15 +1224,26 @@ h3 {
         box-shadow: 0 15px 35px rgba(246, 178, 26, 0.4);
     }
 
-    /* Label */
+    /* Label - změna na "podnadpis" (bez rámečku) */
     .label {
-        font-size: 0.75rem;
-        padding: 0.4rem 1rem;
+        font-size: 0.9rem;
+        padding: 0;
+        border: none;
+        background: transparent;
+        color: var(--clr-primary);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 0.5rem;
+        display: inline-block;
+        border-radius: 0;
     }
 
     /* Sekce Nejčastěji řešíme - grid na 1 sloupec */
     .grid-item--yellow div[style*="grid-template-columns"] {
         grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        /* Zvětšeno z 1rem na 1.5rem */
     }
 
     /* Areál ZKO - karty pod sebe */
@@ -1224,8 +1264,10 @@ h3 {
 
     .section--dark .overlap-container>div[style*="border-radius: 50%"] {
         position: absolute !important;
-        top: -25px !important;
-        left: -15px !important;
+        top: -15px !important;
+        /* Posunuto níž (z -25px) */
+        left: 0px !important;
+        /* Posunuto doprava (z -15px) */
         transform: none !important;
         width: 70px !important;
         height: 70px !important;
@@ -1367,5 +1409,65 @@ h3 {
     .social-links {
         justify-content: center;
         display: flex;
+    }
+
+    /* --- PŘEBITÍ INLINE STYLŮ PRO MOBIL (OPTIMALIZACE MEZER) --- */
+
+    /* Velké marginy u nadpisů a kontejnerů srovnáme na 2rem */
+    div[style*="margin-bottom: 5rem"],
+    div[style*="margin-bottom: 4rem"],
+    div[style*="margin-top: 6rem"],
+    div[style*="margin-top: 8rem"],
+    div[style*="margin-top: 4rem"] {
+        margin-bottom: 2rem !important;
+        margin-top: 2rem !important;
+        padding-bottom: 0 !important;
+    }
+
+    /* Veterina sekce padding - byla 10rem */
+    section[style*="padding: 10rem 0"] {
+        padding: 4rem 0 !important;
+    }
+
+    /* Sloupce s paddingem vlevo -> na mobilu zrušit padding a přidat margin nahoře */
+    div[style*="padding-left: 3rem"],
+    div[style*="padding-left: 2rem"],
+    div[style*="padding-right: 2rem"] {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-top: 1rem !important;
+        /* Zmenšeno z 2rem na 1rem (16px) */
+    }
+
+    /* Inline styly u Labelů */
+    .label[style*="margin-bottom: 3rem"] {
+        margin-bottom: 0.5rem !important;
+    }
+
+    .label[style*="background"] {
+        background: transparent !important;
+        /* Zrušení žlutého pozadí u labelu */
+    }
+
+    /* Specific fix for Vet text */
+    .section--dark h2[style*="margin-bottom: 2rem"] {
+        margin-bottom: 1rem !important;
+    }
+
+    /* Fix pro font ve Veterině - sjednocení */
+    .section--dark p,
+    .section--dark ul,
+    .section--dark li {
+        font-size: 1.1rem !important;
+    }
+
+    /* Služby - ubrat nahoře 8px */
+    .section--mint .text-center {
+        margin-top: -0.5rem !important;
+    }
+
+    /* Odstranění paddingu nad Rezervujte si termín (cca 40px) */
+    #kontakt {
+        padding-top: 0 !important;
     }
 }
