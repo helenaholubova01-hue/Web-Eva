@@ -56,6 +56,8 @@ h1 {
     line-height: 0.95;
     letter-spacing: -0.03em;
     text-transform: uppercase;
+    text-shadow: none !important;
+    /* Odstraněn stín globálně */
 }
 
 h2 {
@@ -142,17 +144,40 @@ h3 {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-.header.scrolled .nav__link {
-    color: white !important;
+/* Bílý text v menu po scrollu - pouze na desktopu */
+@media (min-width: 993px) {
+    .header.scrolled .nav__link:not(.nav__link--icon) {
+        color: white !important;
+    }
 }
 
 /* Specific nav icon and button styles */
 .nav__link--icon {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     display: flex;
     align-items: center;
-    color: var(--clr-primary) !important;
-    /* Žlutá ikona pořád */
+    justify-content: center;
+    background: var(--clr-pastel);
+    /* Mintově zelená */
+    color: var(--clr-text-dark) !important;
+    /* Tmavě zelená ikona */
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    /* Bez okrajů */
+    transition: all 0.3s ease;
+}
+
+.nav__link--icon:hover {
+    background: var(--clr-primary);
+    /* Žlutá při najetí */
+    transform: translateY(-3px);
+}
+
+.nav__link--icon::after {
+    display: none !important;
+    /* Bez linky pod kroužkem */
 }
 
 .btn--nav {
@@ -247,7 +272,7 @@ h3 {
 /* HERO - The Masterpiece */
 .hero {
     min-height: calc(100vh - 70px);
-    background: #267675 url('Obrazky/Desktop3.jpg') no-repeat center top;
+    background: #267675 url('Obrazky/desktop3a.jpg') no-repeat center top;
     background-size: cover;
     background-position: center 80px;
     display: flex;
@@ -329,12 +354,6 @@ h3 {
     transform: translateY(-20px);
     margin-right: auto;
     margin-left: 0;
-    /* Sjednocený elegantní glass efekt - 20% černá */
-    background: rgba(0, 0, 0, 0.2);
-    padding: 2rem;
-    border-radius: 30px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 /* Odstranění stínu z ikonek kytiček */
@@ -415,7 +434,8 @@ h3 {
 }
 
 .approach-img {
-    width: 100%;
+    width: 120%;
+    max-width: 120%;
     transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
     will-change: transform;
 }
@@ -426,7 +446,7 @@ h3 {
 
 /* Zachování zrcadlení pro sekci Můj přístup při hoveru */
 .approach-img--mirrored {
-    transform: scaleX(-1);
+    transform: scaleX(-1) translateX(-45%);
 }
 
 .approach-visual:hover .approach-img--mirrored {
@@ -905,7 +925,6 @@ h3 {
         transform: none;
         max-width: 100%;
         text-align: center;
-        background: rgba(0, 0, 0, 0.2);
     }
 
     /* Skleněný efekt pro landscape orientaci */
@@ -1440,6 +1459,16 @@ h3 {
     #kontakt {
         padding-top: 0 !important;
     }
+
+    /* Utilitky pro pořadí na mobilu */
+    .grid-hravy--reverse-mobile {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .col--order-2-mobile {
+        order: 2 !important;
+    }
 }
 
 /* --- TABLET / DESKTOP FIXES (min-width: 992px) --- */
@@ -1464,8 +1493,12 @@ h3 {
         align-items: flex-start;
         text-align: left;
         font-size: 3.2rem;
-        text-shadow: 0 2px 15px rgba(0, 0, 0, 0.6);
-        /* Výrazný tmavý stín */
+        text-shadow: none !important;
+    }
+
+    .hero__main-title,
+    .hero__location-title {
+        text-shadow: none !important;
     }
 
     .hero__list {
@@ -1487,20 +1520,24 @@ h3 {
     }
 
     .text-yellow {
-        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
-        /* Tmavý stín pro žlutou */
+        text-shadow: none !important;
     }
 }
 
-/* --- LARGE SCREEN FIXES (min-width: 1400px) --- */
-@media (min-width: 1400px) {
+/* --- LARGE SCREEN FIXES (min-width: 1100px) --- */
+@media (min-width: 1100px) {
 
-    /* Na velkém monitoru už text do psů nezasahuje -> zrušíme Glass pozadí */
+    /* Na monitorech nad 1100px už text do psů nezasahuje -> zrušíme Glass pozadí i stíny */
     .hero__content {
         background: transparent !important;
         padding: 0 !important;
         backdrop-filter: none !important;
         box-shadow: none !important;
         margin-top: 80px !important;
+    }
+
+    .hero__content h1,
+    .text-yellow {
+        text-shadow: none !important;
     }
 }
