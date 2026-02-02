@@ -433,9 +433,25 @@ h3 {
     cursor: pointer;
 }
 
+.approach-circle {
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    background: var(--clr-primary);
+    opacity: 0.2;
+    border-radius: 50%;
+    z-index: 1;
+    bottom: -20px;
+    left: -20px;
+    /* Výchozí pozice vlevo dole */
+    transition: all 0.5s ease;
+}
+
 .approach-img {
     width: 120%;
     max-width: 120%;
+    position: relative;
+    z-index: 2;
     transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
     will-change: transform;
 }
@@ -712,6 +728,44 @@ h3 {
     transform: translateY(-25px) scale(1.02);
 }
 
+.approach-img--large {
+    transform: translateY(-10px) scale(1.05);
+}
+
+.approach-visual:hover .approach-img--large {
+    transform: translateY(-25px) scale(1.07);
+}
+
+.approach-img--shadow {
+    filter: drop-shadow(30px 30px 50px rgba(0,0,0,0.15));
+}
+
+/* Sekce Můj přístup - štěně */
+.approach-visual--stene {
+    margin-left: 80px;
+    transform: translateY(100px);
+}
+
+.approach-circle--stene {
+    background: var(--clr-primary);
+    transform: scale(1.1);
+    right: -30px;
+    top: -50px;
+}
+
+/* Sekce Můj přístup 2 - dva psi */
+.approach-visual--psi {
+    /* žádné extra posuny na desktopu */
+}
+
+.approach-circle--psi {
+    background: white;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+    top: 180px;
+    left: 50%;
+}
+
 /* Responsive */
 
 /* Tablet na šířku (landscape) - iPad otočený */
@@ -727,6 +781,13 @@ h3 {
     .hero {
         background: #267675 url('Obrazky/tablet2.jpg') no-repeat center top;
         background-size: cover;
+    }
+
+    .hero__content {
+        background: rgba(0, 0, 0, 0.2);
+        padding: 1.5rem;
+        border-radius: 25px;
+        backdrop-filter: blur(10px);
     }
 }
 
@@ -1099,6 +1160,69 @@ h3 {
     .approach-img {
         width: 100% !important;
         max-width: 280px !important;
+    }
+
+    /* Resetování pozic pro mobil */
+    .approach-visual--stene {
+        margin-left: 0;
+        transform: none;
+        display: flex;
+        justify-content: center;
+        margin-top: 3rem;
+    }
+
+    .approach-visual--psi {
+        display: flex;
+        justify-content: center;
+        margin-top: 3rem;
+    }
+
+    .approach-circle--stene {
+        right: auto;
+        top: -5px;
+        left: 50%;
+        transform: translateX(-50%) scale(1);
+    }
+
+    .approach-circle--psi {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%) scale(1);
+    }
+
+    .approach-img--large {
+        transform: none !important;
+    }
+
+    /* Reset paddingu na citátových boxech v sekcích Můj přístup */
+    #muj-pristup .grid-item--white,
+    #muj-pristup-2 .grid-item--white {
+        padding: 1.5rem !important;
+    }
+
+    /* Sekce Můj přístup - odstranit padding dole */
+    #muj-pristup {
+        padding-bottom: 0 !important;
+    }
+
+    /* Sekce Můj přístup 2 - větší padding nahoře kvůli zaoblenému okraji */
+    #muj-pristup-2 {
+        padding-top: 60px !important;
+    }
+
+    /* Sekce trenérů - oprava useknutého stínu */
+    #treneri .grid-hravy {
+        overflow: visible !important;
+        padding-bottom: 20px;
+    }
+
+    #treneri .grid-item--white {
+        margin-bottom: 10px;
+    }
+
+    /* Reference - tlačítko s větším marginem */
+    #reference .text-center {
+        margin-top: 16px !important;
     }
 
     /* Veterinární sekce */
