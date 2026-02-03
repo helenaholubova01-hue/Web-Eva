@@ -138,14 +138,21 @@ h3 {
     align-items: center;
 }
 
-.header.scrolled {
+.header.scrolled,
+.header--scrolled-always {
     background-color: var(--clr-text-dark) !important;
     padding: 0.3rem 0;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
+/* Na podstránkách - logo vždy viditelné */
+.header--scrolled-always .logo {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
 /* Bílý text v menu po scrollu - pouze na desktopu */
-@media (min-width: 993px) {
+@media (min-width: 1101px) {
     .header.scrolled .nav__link:not(.nav__link--icon) {
         color: white !important;
     }
@@ -167,6 +174,12 @@ h3 {
     border: none;
     /* Bez okrajů */
     transition: all 0.3s ease;
+}
+
+/* Bílé kolečko s logem */
+.nav__link--icon-white {
+    background: white !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .nav__link--icon:hover {
@@ -241,10 +254,10 @@ h3 {
 
 .nav__list {
     display: flex;
-    gap: 3rem;
+    gap: 2rem;
     align-items: center;
     list-style: none;
-    /* Remove those dots */
+    margin-left: 2rem;
 }
 
 .nav__link {
@@ -301,6 +314,11 @@ h3 {
 }
 
 .mobile-header-icons {
+    display: none;
+}
+
+/* Logo v mobilním menu - skryté na desktopu */
+.nav__logo-mobile {
     display: none;
 }
 
@@ -387,7 +405,7 @@ h3 {
 .section--mint {
     background: var(--clr-mint);
     border-radius: 80px 0 80px 0;
-    margin: 4rem 0;
+    margin: 2.5rem 0;
 }
 
 .section--dark {
@@ -425,6 +443,13 @@ h3 {
     grid-template-columns: repeat(12, 1fr);
     gap: 3rem;
     align-items: center;
+}
+
+.vet-grid-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 4rem;
 }
 
 /* Approach Images Hover Effect */
@@ -737,7 +762,7 @@ h3 {
 }
 
 .approach-img--shadow {
-    filter: drop-shadow(30px 30px 50px rgba(0,0,0,0.15));
+    filter: drop-shadow(30px 30px 50px rgba(0, 0, 0, 0.15));
 }
 
 /* Sekce Můj přístup - štěně */
@@ -791,7 +816,7 @@ h3 {
     }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1100px) {
 
     /* Základní nastavení */
     html {
@@ -833,6 +858,12 @@ h3 {
         opacity: 0;
         visibility: hidden;
         transition: all 0.3s ease;
+    }
+
+    /* Na podstránkách logo viditelné i před scrollem */
+    .page-subpage .logo {
+        opacity: 1;
+        visibility: visible;
     }
 
     /* Při scrollu se logo zobrazí */
@@ -1122,6 +1153,13 @@ h3 {
         padding-right: 0 !important;
     }
 
+    .vet-grid-inner {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+    }
+
     .grid-item {
         padding: 1.5rem !important;
         transform: none !important;
@@ -1135,15 +1173,38 @@ h3 {
 
     .overlap-container {
         padding: 0 !important;
+        position: relative;
     }
 
-    .overlap-container>div[style*="position: absolute"] {
+    .overlap-container>div[style*="position: absolute"]:not(.vet-badge) {
         position: relative !important;
         transform: none !important;
         left: 0 !important;
         bottom: 0 !important;
         margin-top: 1rem;
         max-width: 100% !important;
+    }
+
+    /* Povolení přetečení pro vyčnívající prvky a přidání prostoru pro řádek */
+    #veterina .container {
+        overflow: visible !important;
+        padding-top: 2rem !important;
+    }
+
+    #veterina {
+        padding: 4rem 0 !important;
+    }
+
+    .vet-badge {
+        width: 80px !important;
+        height: 80px !important;
+        top: 0 !important;
+        left: 0 !important;
+        transform: translate(-15px, -15px) !important;
+    }
+
+    .vet-badge i {
+        font-size: 2rem !important;
     }
 
     /* Approach sekce */
@@ -1236,6 +1297,39 @@ h3 {
         padding: 4rem 0 !important;
     }
 
+    /* Sekce na mobilu - pouze padding, žádný margin */
+    .section {
+        padding: 2.5rem 0 !important;
+        margin: 0 !important;
+    }
+
+    .section--mint {
+        margin: 0 !important;
+        padding: 3rem 1rem !important;
+        border-radius: 40px 0 40px 0 !important;
+    }
+
+    .section--dark {
+        padding: 3rem 1rem !important;
+        border-radius: 0 40px 0 40px !important;
+    }
+
+    /* Hero sekce na podstránkách - dostatek místa pro header */
+    .section--hero-subpage {
+        padding: 120px 1rem 2.5rem !important;
+    }
+
+    /* Text-center margin na mobilu */
+    .text-center[style*="margin-bottom: 4rem"] {
+        margin-bottom: 1.5rem !important;
+    }
+
+    /* Grid gap na mobilu */
+    .grid-hravy[style*="gap: 4rem"],
+    .grid-hravy[style*="gap: 3rem"] {
+        gap: 1.5rem !important;
+    }
+
     .vet-gallery {
         width: 100%;
         aspect-ratio: 4/3;
@@ -1251,22 +1345,62 @@ h3 {
         font-size: 1rem;
     }
 
-    /* Navigace - moderní světlý design */
+    /* Logo v mobilním menu - levý horní roh */
+    .nav__logo-mobile {
+        display: block;
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        z-index: 2;
+    }
+
+    .nav__logo-mobile img {
+        height: 50px;
+        filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
+    }
+
+    /* Navigace - tmavě zelená s bublinami */
     .nav {
         position: fixed;
         top: 0;
         right: -100%;
         width: 100%;
         height: 100vh;
-        background: rgba(168, 212, 176, 0.98);
-        /* #A8D4B0 s průhledností */
-        backdrop-filter: blur(20px);
+        background: var(--clr-bg-dark);
         display: flex !important;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         transition: 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
         z-index: 1000;
+        overflow: hidden;
+    }
+
+    /* Dekorativní bubliny v menu */
+    .nav::before {
+        content: '';
+        position: absolute;
+        width: 280px;
+        height: 280px;
+        background: var(--clr-primary);
+        border-radius: 50%;
+        top: -80px;
+        right: -80px;
+        opacity: 0.15;
+        z-index: 0;
+    }
+
+    .nav::after {
+        content: '';
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background: var(--clr-mint);
+        border-radius: 50%;
+        bottom: -50px;
+        left: -50px;
+        opacity: 0.2;
+        z-index: 0;
     }
 
     .nav--active {
@@ -1275,24 +1409,23 @@ h3 {
 
     .nav__list {
         flex-direction: column;
-        gap: 2.5rem;
-        /* Větší mezery pro vzdušnější vzhled */
+        gap: 1.4rem;
         text-align: center;
         padding: 2rem;
+        position: relative;
+        z-index: 1;
     }
 
     .nav__link {
-        font-size: 1.6rem;
-        color: var(--clr-text-dark) !important;
-        /* Tmavý text na světlém pozadí */
+        font-size: 1.25rem;
+        color: white !important;
         font-weight: 600;
         transition: all 0.3s ease;
         position: relative;
-        /* Pro podtržení */
         text-decoration: none;
     }
 
-    /* Žluté podtržení při hoveru (jako na desktopu) */
+    /* Žluté podtržení při hoveru */
     .nav__link::after {
         content: '';
         position: absolute;
@@ -1301,33 +1434,53 @@ h3 {
         width: 0;
         height: 3px;
         background: var(--clr-primary);
-        /* Žlutá */
         transition: width 0.3s ease;
         border-radius: 2px;
     }
 
     .nav__link:hover {
-        color: var(--clr-text-dark) !important;
-        /* Text zůstane tmavý */
-        /* transform: translateX(10px); - Zrušeno posouvání */
+        color: var(--clr-primary) !important;
     }
 
     .nav__link:hover::after {
         width: 100%;
     }
 
+    /* Ikony WhatsApp a Facebook v menu - sytější barva */
+    .nav__link--icon {
+        display: flex !important;
+        /* Zobrazit na mobilu */
+        background: var(--clr-pastel) !important;
+        color: var(--clr-text-dark) !important;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        border: none !important;
+    }
+
+    .nav__link--icon:hover {
+        background: var(--clr-primary) !important;
+        color: var(--clr-text-dark) !important;
+        transform: translateY(-3px);
+    }
+
+    /* Bílé logo kolečko zůstane bílé při hoveru */
+    .nav__link--icon-white:hover {
+        background: white !important;
+    }
+
     .nav-toggle {
         display: flex;
     }
 
-    /* Hamburger čárky - bílé na tmavém pozadí headeru */
+    /* Hamburger čárky - bílé */
     .nav-toggle span {
         background: white;
     }
 
-    /* Když je menu otevřené, čárky jsou tmavé na světlém pozadí */
+    /* Když je menu otevřené, čárky zůstanou bílé */
     .nav-toggle.active span {
-        background: var(--clr-text-dark);
+        background: white !important;
     }
 
     /* Tlačítko rezervace v menu */
@@ -1335,7 +1488,7 @@ h3 {
         background: var(--clr-primary);
         color: var(--clr-text-dark);
         box-shadow: 0 10px 25px rgba(246, 178, 26, 0.3);
-        margin-top: 1rem;
+        margin-top: 0.5rem;
     }
 
     .nav .btn--nav:hover {
@@ -1351,9 +1504,9 @@ h3 {
         background: transparent;
         color: var(--clr-primary);
         font-weight: 700;
-        text-transform: uppercase;
+        text-transform: none;
         letter-spacing: 0.1em;
-        margin-bottom: 0.5rem;
+        margin: 8px 0;
         display: inline-block;
         border-radius: 0;
     }
@@ -1624,7 +1777,7 @@ h3 {
 }
 
 /* --- TABLET / DESKTOP FIXES (min-width: 992px) --- */
-@media (min-width: 992px) {
+@media (min-width: 1101px) {
     .hero__content {
         max-width: 800px;
         margin-top: 60px;
