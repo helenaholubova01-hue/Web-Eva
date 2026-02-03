@@ -1165,6 +1165,16 @@ h3 {
         transform: none !important;
     }
 
+    /* Oprava velkého gapu u flex kontejnerů na mobilu */
+    .grid-item[style*="gap: 4rem"] {
+        gap: 2rem !important;
+    }
+
+    /* Zrušení pravého okraje u boxu 'Nejčastěji spolu řešíme' na mobilu */
+    .grid-item[style*="margin-right: 3rem"] {
+        margin-right: 0 !important;
+    }
+
     /* Obrázky */
     .img-hravy {
         height: 250px !important;
