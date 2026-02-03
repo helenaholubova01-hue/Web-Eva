@@ -1171,7 +1171,7 @@ h3 {
     }
 
     /* Zrušení pravého okraje u boxu 'Nejčastěji spolu řešíme' na mobilu */
-    .grid-item[style*="margin-right: 3rem"] {
+    #box-resime {
         margin-right: 0 !important;
     }
 
