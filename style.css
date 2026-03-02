@@ -307,7 +307,7 @@ h3 {
 /* HERO - The Masterpiece */
 .hero {
     min-height: calc(100vh - 70px);
-    background: #267675 url('Obrazky/desktop3a.jpg') no-repeat center top;
+    background: #267675 url('Obrazky/Desktop3a.jpg') no-repeat center top;
     background-size: cover;
     background-position: center 80px;
     display: flex;
